@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Banking_Project]">
+  <test name="IE_test(failed)">
+    <parameter name="Browser" value="ie"/>
+    <classes>
+      <class name="crm.ApplicationTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="BrowserEngin"/>
+          <include name="tearDown"/>
+          <include name="getResult"/>
+          <include name="Logconfig"/>
+        </methods>
+      </class> <!-- crm.ApplicationTest -->
+    </classes>
+  </test> <!-- IE_test(failed) -->
+</suite> <!-- Failed suite [Banking_Project] -->

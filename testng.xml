@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"> 
+<suite name="Banking_Project"> 
+
+<test name= "IE_test">
+<parameter name="Browser" value="ie"></parameter>
+ <classes> 
+     <class name="crm.ApplicationTest">
+       <methods>
+            <include name= "BrowserEngin"></include>
+       </methods>
+     </class>
+ </classes>
+</test> 
+</suite>  
