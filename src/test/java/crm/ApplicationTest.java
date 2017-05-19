@@ -48,7 +48,7 @@ static	WebDriver driver;
 	            		   
 	            String title = driver.getTitle();
 	                  System.out.println("Home page title- "+title);
-	                  String Expected = "Café Coffee Day | A Lot Can Happen Over Coffee";
+	                  String Expected = "Café Coffee Day | A Lot Can Happen Over Coffe";
 	   Assert.assertEquals(Expected,title);  
 	               
 	         } catch (Exception e) {
