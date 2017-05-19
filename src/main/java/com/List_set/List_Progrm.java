@@ -13,11 +13,11 @@ public class List_Progrm {
 
 	public static void main(String[] args) {
 		
-	int count[]= {1,2,4,3,5,6,8,7,9};
+	int count[]= {1,2,4,3,5,6,8,7,9,9};
 		
 		List<Integer> obj = new ArrayList<Integer>();
 		 {
-		      for(int i = 0; i <= 8; i++){
+		      for(int i = 0; i <= 9; i++){
 		         obj.add(count[i]);
 		         
 		         

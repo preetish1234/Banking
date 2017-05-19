@@ -5,7 +5,7 @@
    
         <parameter name = "platform" value ="WIN8_1"/>
         <parameter name ="browserName" value="firefox"/>
-        <parameter name ="remoteurl" value="192.168.1.3:5555"/>     
+        <parameter name ="remoteurl" value="http://192.168.1.3:4444/grid/register/wd/hub"/>     
    
  
  
@@ -23,7 +23,7 @@
    
         <parameter name = "platform" value = "WIN8_1"/>
         <parameter name ="browserName" value="chrome"/>
-        <parameter name ="remoteurl" value="192.168.1.3:5555"/>     
+        <parameter name ="remoteurl" value="http://192.168.1.3:4444/grid/register/wd/hub"/>     
    
  
  
@@ -41,7 +41,7 @@
    
         <parameter name = "platform" value = "WIN8_1"/>
         <parameter name ="browserName" value="IE"/>
-        <parameter name ="remoteurl" value="192.168.1.3:5555"/>     
+        <parameter name ="remoteurl" value="http://192.168.1.3:4444/grid/register/wd/hub"/>     
    
  
  

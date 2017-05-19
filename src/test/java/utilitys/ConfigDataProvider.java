@@ -12,7 +12,7 @@ public class ConfigDataProvider
 	public ConfigDataProvider()
 	{
 		
-		File src=new File("./configutration/config.properties");
+		File src=new File("C:\\Users\\Preetish Kumar\\Desktop\\Banking\\src\\test\\java\\configutration\\config.properties");
 		
 		try 
 		{

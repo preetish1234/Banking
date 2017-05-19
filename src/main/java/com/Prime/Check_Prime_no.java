@@ -18,7 +18,7 @@ public class Check_Prime_no {
 		if (num%2==0){
 			prime = false;
 			
-			
+
 		}
 		
 	}

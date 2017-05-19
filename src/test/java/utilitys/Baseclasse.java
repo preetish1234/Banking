@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
@@ -21,7 +22,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 
-public class Baseclass{
+public class Baseclasse{
 	
 	public static ExtentHtmlReporter htmlReport;	
 	public static ExtentReports extent;
@@ -63,34 +64,39 @@ public class Baseclass{
 			  }
 	}
 	@AfterMethod(alwaysRun=true)
-	public void getResult(ITestResult result ) throws IOException
+	public void getResult(ITestResult result) throws IOException
 	{
-		if(result.getStatus()==ITestResult.FAILURE){
-			String screenshotPath = Getscreenshot.captureScreenShot(driver, "screenshotName");
-			test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+ " Test case FAILED due to below issue", ExtentColor.RED));
-			test.fail(result.getThrowable());
-            test.fail("Snapshot below: "+ test.addScreenCaptureFromPath(screenshotPath));		
-		}
-		else if(result.getStatus()==ITestResult.SUCCESS){
-			test.log(Status.PASS, MarkupHelper.createLabel(result.getName()+"Test case PASSED", ExtentColor.GREEN));
-			test.pass(result.getThrowable());	
-		}
-		else if(result.getStatus()==ITestResult.SKIP){
-			test.log(Status.PASS, MarkupHelper.createLabel(result.getName()+"Test case SKIPPED", ExtentColor.YELLOW));
-			test.skip(result.getThrowable());
+		try {
+			if(result.getStatus()==ITestResult.FAILURE){
+				String screenshotPath = Getscreenshot.captureScreenShot(driver, "screenshotName");
+				test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+ " Test case FAILED due to below issue", ExtentColor.RED));
+				test.fail(result.getThrowable());
+			    test.fail("Snapshot below: "+ test.addScreenCaptureFromPath(screenshotPath));		
+			}
+			else if(result.getStatus()==ITestResult.SUCCESS){
+				test.log(Status.PASS, MarkupHelper.createLabel(result.getName()+"Test case PASSED", ExtentColor.GREEN));
+			
+			}
+			else if(result.getStatus()==ITestResult.SKIP){
+				test.log(Status.PASS, MarkupHelper.createLabel(result.getName()+"Test case SKIPPED", ExtentColor.YELLOW));
+				test.skip(result.getThrowable());
+			}
+		} catch (Exception e) {
+			
+			e.printStackTrace();
 		}
 	}
+	
+	
+	
 	@AfterSuite(alwaysRun=true)
 	public void tearDown(){
 		try {
 			extent.flush();
-			
 		} catch (Exception e) {
 		
 			e.printStackTrace();
 		}
 	}
-	}
-
-
+}
 

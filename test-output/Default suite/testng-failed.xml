@@ -5,11 +5,13 @@
     <classes>
       <class name="crm.ApplicationTest">
         <methods>
+          <include name="tearDown"/>
           <include name="setUp"/>
           <include name="BrowserEngin"/>
-          <include name="tearDown"/>
-          <include name="getResult"/>
           <include name="Logconfig"/>
+          <include name="getResult"/>
+          <include name="closeBrowser"/>
+          <include name="verifyPage"/>
         </methods>
       </class> <!-- crm.ApplicationTest -->
     </classes>

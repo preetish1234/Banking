@@ -21,16 +21,19 @@ import utilitys.DataProviderFactory;
 
 public class Parallel_Test_Grid {
 	
-	public static RemoteWebDriver driver;
 	
-	@BeforeTest
-    @Parameters({"platform","browserName","remoteurl"})
+public static RemoteWebDriver driver;
+	
+
+    @BeforeTest
+	@Parameters({"platform","browserName","remoteurl"})
+
 public void Setup_Grid(String platform,String browserName, String remoteurl)throws MalformedURLException{
 		
 		DesiredCapabilities capabilities = null;
 		
 		if(browserName.equalsIgnoreCase("firefox")){
-			capabilities =  DesiredCapabilities.firefox();
+			   capabilities =  DesiredCapabilities.firefox();
 			    
 			   capabilities.setCapability("marionette", false);
 			   capabilities.setBrowserName("firefox");
@@ -47,7 +50,7 @@ public void Setup_Grid(String platform,String browserName, String remoteurl)thro
 		    capabilities =  DesiredCapabilities.chrome();
 			capabilities.setBrowserName("chrome");
 		    capabilities.setCapability(ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY,System.setProperty("webdriver.chrome.driver", 
-		    		"C:\\Users\\Preetish Kumar\\workspace\\Banking\\driver\\chromedriver.exe"));
+		    		DataProviderFactory.getConfig().getChromePath()));
 		
 		    driver =  new ChromeDriver(capabilities);
 		}
@@ -59,10 +62,11 @@ public void Setup_Grid(String platform,String browserName, String remoteurl)thro
 			capabilities =  DesiredCapabilities.internetExplorer();
 			capabilities.setBrowserName("ie");
 			capabilities.setCapability(InternetExplorerDriverService.IE_DRIVER_EXE_PROPERTY,System.setProperty("webdriver.ie.driver",
-                    "C:\\Users\\Preetish Kumar\\Desktop\\Banking\\driver\\IEDriverServer.exe"));
+                    DataProviderFactory.getConfig().getIEPath()));
                driver = new InternetExplorerDriver(capabilities);
 			}
-		capabilities.setPlatform(Platform.WIN8_1);
+		
+		capabilities.setPlatform(Platform.WINDOWS);
 	  driver = new RemoteWebDriver(new URL(remoteurl),capabilities);	
 	  driver.get("http://www.google.com");
 	}

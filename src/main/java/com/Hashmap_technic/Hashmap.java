@@ -14,13 +14,13 @@ public class Hashmap {
    Map<String,String> hmap = new HashMap<String,String>();
         
 hmap.put("preetish", "8152888585");
-hmap.put("pintu", "9431543369");
+hmap.put("preetish", "9431543369");
 hmap.put("jaleshwar", "7079377847");
 hmap.put("preeti", "8152888585");
-
+System.out.println(hmap);
 
 do {
-	System.out.println(hmap);
+	//System.out.println(hmap);
 	System.out.println("Enter name :-");
 	String input = in.nextLine();
 	
@@ -40,7 +40,7 @@ System.out.println("Moblie no-"+hmap.get(input2));
 System.out.println("Enter name :-");
 String input1 = in.nextLine();
 
-if ("pintu".equals(input1));
+if ("preeti".equals(input1));
 System.out.println("Moblie no-"+hmap.get(input1));
 
 
