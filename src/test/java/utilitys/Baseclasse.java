@@ -21,7 +21,7 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
-
+import ru.yandex.qatools.allure.annotations.Attachment;
 public class Baseclasse{
 	
 	public static ExtentHtmlReporter htmlReport;	
@@ -64,6 +64,7 @@ public class Baseclasse{
 			  }
 	}
 	@AfterMethod(alwaysRun=true)
+	@Attachment(value = "Page screenshot", type = "image/png")
 	public void getResult(ITestResult result) throws IOException
 	{
 		try {
